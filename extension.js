@@ -42,7 +42,7 @@ function createTable(data) {
     theadTr.append("<th>სემესტრი</th>");
     theadTr.append("<th>კრედიტი</th>");
     theadTr.append("<th>ქულა</th>");
-    theadTr.append("<th></th>");
+    theadTr.append("<th>შეფასება</th>");
     theadTr.append("<th>სილაბუსი</th>");
     theadTr.append("<th>დეტალურად</th>");
     thead.append(theadTr);
@@ -54,7 +54,7 @@ function createTable(data) {
          var tr = $("<tr/>");
          tr.append("<td>" + getCheckMark($(this)[0].data.StatusID) + "</td>");
          tr.append("<td>" + $(this)[0].data.SubjectName + "</td>");
-         tr.append("<td>" + $(this)[0].data.SemesterName + "</td>");
+         tr.append("<td>" + $(this)[0].data.StudySeasonName + " - " + $(this)[0].data.SemesterName + "</td>");
          tr.append("<td>" + $(this)[0].data.Credit + "</td>");
          tr.append("<td>" + $(this)[0].data.Score + "</td>");
          tr.append("<td>" + getGPA($(this)[0].data.Score) + "</td>");
@@ -69,9 +69,9 @@ function createTable(data) {
 
 function getCheckMark(p1) {
     if (p1 == 2 || p1 == 3) {
-        return '<div data-qtip="ჩაბარებული" style="text-align:center"><img  src="' + getPath('imgs/Checkmark.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
+        return '<div data-qtip="ჩაბარებული" style="text-align:center"><img  src="' + getPath('imgs/Checkmark.png') + '"style="height:16px;width:16px"/></div>';
     }
-    else return '<div data-qtip="კიდევ სცადეთ" style="text-align:center"><img  src="' + getPath('imgs/Failed.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
+    else return '<div data-qtip="კიდევ სცადეთ" style="text-align:center"><img  src="' + getPath('imgs/Failed.png') + '"style="height:16px;width:16px"/></div>';
 }
 
 function getGPA(p1) {
@@ -90,9 +90,12 @@ function  renderSilabus (sylabusId) {
 }
 
 
-function renderDetailButton(active, edCourseGras, EduCourseName ) {
+function renderDetailButton(active, edCourseGras, EduCourseName) {
     if (active == true && edCourseGras != 0) {
         return '<div data-qtip="დეტალური ცხრილი" style="text-align:center" onclick="OpenGradesPanel(' + edCourseGras + ',\'' + EduCourseName + '\'' + ')" ><img  src="' + getPath('imgs/view_Details.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
+    }
+    else {
+        return "არ მოიძებნა";
     }
 }
 
