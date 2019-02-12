@@ -61,8 +61,8 @@ function createTable(data) {
          tr.append("<td>" + renderSilabus($(this)[0].data.SyllabusID) + "</td>");
          tr.append("<td>" + renderDetailButton($(this)[0].data.IsActive, $(this)[0].data.EduCoursesGradesGroupingID, $(this)[0].data.EduCourseName) + "</td>");
          tbody.append(tr);
-     });
-    
+    });
+    $("#studentProfile").append(getAvGpa());
     $("#studentProfile").append(table);
    
 }
@@ -99,5 +99,17 @@ function renderDetailButton(active, edCourseGras, EduCourseName) {
     }
 }
 
-
+function getAvGpa() {
+    Ext.Ajax.request({
+        url: getPath('StudentCard/GetStudentInfoPortal'),
+        method: 'POST',
+        success: function (result) {
+            var resultObj = Ext.decode(result.responseText);
+            if (resultObj.success) {
+                var data = resultObj.data;
+                return data.Info;
+            }
+        }
+    });
+}
 getData();
