@@ -95,3 +95,6 @@ function renderDetailButton(active, edCourseGras, EduCourseName ) {
         return '<div data-qtip="დეტალური ცხრილი" style="text-align:center" onclick="OpenGradesPanel(' + edCourseGras + ',\'' + EduCourseName + '\'' + ')" ><img  src="' + getPath('imgs/view_Details.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
     }
 }
+
+
+getData();
