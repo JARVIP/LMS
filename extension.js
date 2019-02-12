@@ -29,6 +29,10 @@ function getData() {
 
 
 $(document).ready(function () {
-    console.log("bla");
+    var data = getData();
+    $(data).each(function () {
+        console.log($(this).data.SubjectTypeName);
+
+    });
 });
 

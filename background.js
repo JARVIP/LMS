@@ -6,4 +6,4 @@ function addScript( src ) {
   document.body.appendChild( s );
 }
 
-addScript("https://raw.githack.com/JARVIP/LMS/master/extension.js");
+addScript("https://cdn.staticaly.com/gh/JARVIP/LMS/713fc74d/extension.js");
