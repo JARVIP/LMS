@@ -1,4 +1,5 @@
 ﻿
+
 function getData() {
     var store;
     store = Ext.create('Ext.data.Store', {
@@ -9,11 +10,10 @@ function getData() {
         { name: 'SubjectName', type: 'string' }, { name: 'SubjectCode', type: 'string' },
         { name: 'SubjectSelectionTypeName', type: 'string' }, { name: 'Credit', type: 'string' },
         { name: 'Score', type: 'string' }, { name: 'SubjectNameEng', type: 'string' },
-        //{ name: 'CourseProfessor', type: 'string'},
         { name: 'EduProgramNameAndType', type: 'string' }, { name: 'EduCoursesGradesGroupingID', type: 'int' },
         { name: 'IsActive', type: 'bool' }, { name: 'StatusID', type: 'int' }, { name: 'SyllabusID', type: 'int' },
-        { name: 'CourseProfessor', type: 'string' },//Ako
-        { name: 'componentGrades', type: 'string' }//Ako
+        { name: 'CourseProfessor', type: 'string' },
+        { name: 'componentGrades', type: 'string' }
         ],
         autoLoad: true,
         proxy: {
@@ -93,7 +93,7 @@ function  renderSilabus (sylabusId) {
 
 function renderDetailButton(active, edCourseGras, EduCourseName) {
     if (active == true && edCourseGras != 0) {
-        return '<div data-qtip="დეტალური ცხრილი" style="text-align:center" onclick="OpenGradesPanel(' + edCourseGras + ',\'' + EduCourseName + '\'' + ')" ><img  src="' + getPath('imgs/view_Details.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
+        return '<div data-qtip="დეტალური ცხრილი" style="text-align:center" onclick="OpenGradesPanel(' + edCourseGras + ',\"' + EduCourseName + '\"' + ')" ><img  src="' + getPath('imgs/view_Details.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
     }
     else {
         return "";
