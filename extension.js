@@ -33,6 +33,7 @@ function getData() {
 
 function createTable(data) {
     $("#studentProfile").html("");
+    $("#studentProfile").append("<div id='gpa'></div>")
     var table = $("<table/>").addClass("table").addClass("table-bordered");
     var thead = $("<thead/>");
     var theadTr = $("<tr/>");
@@ -50,7 +51,6 @@ function createTable(data) {
     table.append(tbody);
     
      $(data).each(function () {
-         console.log($(this)[0].data.EduCourseName);
          var tr = $("<tr/>");
          tr.append("<td>" + getCheckMark($(this)[0].data.StatusID) + "</td>");
          tr.append("<td>" + $(this)[0].data.SubjectName + "</td>");
@@ -62,8 +62,9 @@ function createTable(data) {
          tr.append("<td>" + renderDetailButton($(this)[0].data.IsActive, $(this)[0].data.EduCoursesGradesGroupingID, $(this)[0].data.EduCourseName) + "</td>");
          tbody.append(tr);
     });
-    $("#studentProfile").append(getAvGpa());
+    
     $("#studentProfile").append(table);
+    getAvGpa();
    
 }
 
@@ -107,9 +108,11 @@ function getAvGpa() {
             var resultObj = Ext.decode(result.responseText);
             if (resultObj.success) {
                 var data = resultObj.data;
-                return data.Info;
+                $("#gpa").append(data.Info);
             }
         }
     });
 }
+
 getData();
+
