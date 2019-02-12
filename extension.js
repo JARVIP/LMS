@@ -1,4 +1,6 @@
-function getData() {
+
+var data;
+function getData(callback) {
     var store = Ext.create('Ext.data.Store', {
         groupField: 'EduProgramNameAndType',
         fields: [{ name: 'SubjectTypeName', type: 'string' }, { name: 'StatusName', type: 'string' }, { name: 'EduCourseName', type: 'string' },
@@ -22,17 +24,19 @@ function getData() {
         },
         listeners: { beforeload: function (store) { store.proxy.extraParams = { start: 0, limit: 10000 } } }
     });
-    
-    return store.data.items;
+    data = store.data.items;
+
+    callback();
 }
 
-
-
 $(document).ready(function () {
-    var data = getData();
-    $(data).each(function (){
-        console.log($(this)[0].data.EduCourseName);
+    getData(function () {
+
+        $(data).each(function () {
+            console.log($(this)[0].data.EduCourseName);
+
+        });
+
 
     });
 });
-
