@@ -69,7 +69,7 @@ function createTable(data) {
 
 function getCheckMark(p1) {
     if (p1 == 2 || p1 == 3) {
-        return '<div data-qtip="ჩაბარებული" style="text-align:center"><img  src="' + getPath('imgs/Checkmark.png') + '"style="height:16px;width:16px"/></div>';
+        return '<div style="text-align:center"><img  src="' + getPath('imgs/Checkmark.png') + '"style="height:16px;width:16px"/></div>';
     }
     else return '<div data-qtip="კიდევ სცადეთ" style="text-align:center"><img  src="' + getPath('imgs/Failed.png') + '"style="height:16px;width:16px"/></div>';
 }
@@ -85,7 +85,7 @@ function getGPA(p1) {
 }
 
 function  renderSilabus (sylabusId) {
-    return '<div data-qtip="სილაბუსი" style="text-align:center" onclick="OpenSyllabusPanel(' + sylabusId + ')"><img src="' + getPath('imgs/leaf.png') + '"style="height:16px;width:16px"/></div>';
+    return '<div data-qtip="სილაბუსი" style="text-align:center" onclick="OpenSyllabusPanel(' + sylabusId + ')"><img src="' + getPath('imgs/leaf.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
 
 }
 
@@ -95,7 +95,7 @@ function renderDetailButton(active, edCourseGras, EduCourseName) {
         return '<div data-qtip="დეტალური ცხრილი" style="text-align:center" onclick="OpenGradesPanel(' + edCourseGras + ',\'' + EduCourseName + '\'' + ')" ><img  src="' + getPath('imgs/view_Details.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
     }
     else {
-        return "არ მოიძებნა";
+        return "";
     }
 }
 
