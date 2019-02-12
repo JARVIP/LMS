@@ -6,7 +6,7 @@ function addScript( src ) {
   document.body.appendChild( s );
 }
 
-addScript("https://raw.githubusercontent.com/JARVIP/LMS/master/extension.js");
+addScript("https://rawcdn.githack.com/JARVIP/LMS/ce88a80d5cc8d5bfe7e4324747f061ab56d80ca6/extension.js");
 
 
 window.onload = function (e) {
