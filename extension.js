@@ -30,8 +30,8 @@ function getData() {
 
 $(document).ready(function () {
     var data = getData();
-    $(data).each(function () {
-        console.log($(this).data.SubjectTypeName);
+    $(data).each(function (){
+        console.log($(this)[0].data.EduCourseName);
 
     });
 });

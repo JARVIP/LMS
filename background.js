@@ -6,4 +6,4 @@ function addScript( src ) {
   document.body.appendChild( s );
 }
 
-addScript("https://cdn.staticaly.com/gh/JARVIP/LMS/713fc74d/extension.js");
+addScript("https://cdn.staticaly.com/gh/JARVIP/LMS/a50a32f5/extension.js");
