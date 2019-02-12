@@ -26,3 +26,9 @@ function getData() {
     return store.data.items;
 }
 
+
+
+$(document).ready(function () {
+    console.log("bla");
+});
+
