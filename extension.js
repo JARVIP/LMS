@@ -24,7 +24,7 @@ function getData(callback) {
         },
         listeners: { beforeload: function (store) { store.proxy.extraParams = { start: 0, limit: 10000 } } }
     });
-    data = store.data.items;
+    data = store.data;
 
     callback();
 }
@@ -32,7 +32,7 @@ function getData(callback) {
 $(document).ready(function () {
     getData(function () {
 
-        $(data).each(function () {
+        $(data.items).each(function () {
             console.log($(this)[0].data.EduCourseName);
 
         });
