@@ -32,47 +32,47 @@ function getData() {
 }
 
 function createTable(data) {
-    $("#studentProfile").html("");
-    $("#studentProfile").append("<div id='gpa'></div>")
-    var table = $("<table/>").addClass("table").addClass("table-bordered");
-    var thead = $("<thead/>");
-    var theadTr = $("<tr/>");
-    var tbody = $("<tbody/>");
-    theadTr.append("<th></th>");
-    theadTr.append("<th>დისციპლინა</th>");
-    theadTr.append("<th>სემესტრი</th>");
-    theadTr.append("<th>კრედიტი</th>");
-    theadTr.append("<th>ქულა</th>");
-    theadTr.append("<th>შეფასება</th>");
-    theadTr.append("<th>სილაბუსი</th>");
-    theadTr.append("<th>დეტალურად</th>");
+    $(\"#studentProfile\").html(\"\");
+    $(\"#studentProfile\").append(\"<div id='gpa'></div>\");
+    var table = $(\"<table/>\").addClass(\"table\").addClass(\"table-bordered\");
+    var thead = $(\"<thead/>\");
+    var theadTr = $(\"<tr/>\");
+    var tbody = $(\"<tbody/>\");
+    theadTr.append(\"<th></th>\");
+    theadTr.append(\"<th>დისციპლინა</th>\");
+    theadTr.append(\"<th>სემესტრი</th>\");
+    theadTr.append(\"<th>კრედიტი</th>\");
+    theadTr.append(\"<th>ქულა</th>\");
+    theadTr.append(\"<th>შეფასება</th>\");
+    theadTr.append(\"<th>სილაბუსი</th>\");
+    theadTr.append(\"<th>დეტალურად</th>\");
     thead.append(theadTr);
     table.append(thead);
     table.append(tbody);
     
      $(data).each(function () {
-         var tr = $("<tr/>");
-         tr.append("<td>" + getCheckMark($(this)[0].data.StatusID) + "</td>");
-         tr.append("<td>" + $(this)[0].data.SubjectName + "</td>");
-         tr.append("<td>" + $(this)[0].data.StudySeasonName + " - " + $(this)[0].data.SemesterName + "</td>");
-         tr.append("<td>" + $(this)[0].data.Credit + "</td>");
-         tr.append("<td>" + $(this)[0].data.Score + "</td>");
-         tr.append("<td>" + getGPA($(this)[0].data.Score) + "</td>");
-         tr.append("<td>" + renderSilabus($(this)[0].data.SyllabusID) + "</td>");
-         tr.append("<td>" + renderDetailButton($(this)[0].data.IsActive, $(this)[0].data.EduCoursesGradesGroupingID, $(this)[0].data.EduCourseName) + "</td>");
+         var tr = $(\"<tr/>\");
+         tr.append(\"<td>\" + getCheckMark($(this)[0].data.StatusID) + \"</td>\");
+         tr.append(\"<td>\" + $(this)[0].data.SubjectName + \"</td>\");
+         tr.append(\"<td>\" + $(this)[0].data.StudySeasonName + \" - \" + $(this)[0].data.SemesterName + \"</td>\");
+         tr.append(\"<td>\" + $(this)[0].data.Credit + \"</td>\");
+         tr.append(\"<td>\" + $(this)[0].data.Score + \"</td>\");
+         tr.append(\"<td>\" + getGPA($(this)[0].data.Score) + \"</td>\");
+         tr.append(\"<td>\" + renderSilabus($(this)[0].data.SyllabusID) + \"</td>\");
+         tr.append(\"<td>\" + renderDetailButton($(this)[0].data.IsActive, $(this)[0].data.EduCoursesGradesGroupingID, $(this)[0].data.EduCourseName) + \"</td>\");
          tbody.append(tr);
     });
     
-    $("#studentProfile").append(table);
+    $(\"#studentProfile\").append(table);
     getAvGpa();
-   
+    makeGPACalculator();
 }
 
 function getCheckMark(p1) {
     if (p1 == 2 || p1 == 3) {
-        return '<div style="text-align:center"><img  src="' + getPath('imgs/Checkmark.png') + '"style="height:16px;width:16px"/></div>';
+        return '<div style=\"text-align:center\"><img  src=\"' + getPath('imgs/Checkmark.png') + '\"style=\"height:16px;width:16px\"/></div>';
     }
-    else return '<div data-qtip="კიდევ სცადეთ" style="text-align:center"><img  src="' + getPath('imgs/Failed.png') + '"style="height:16px;width:16px"/></div>';
+    else return '<div data-qtip=\"კიდევ სცადეთ\" style=\"text-align:center\"><img  src=\"' + getPath('imgs/Failed.png') + '\"style=\"height:16px;width:16px\"/></div>';
 }
 
 function getGPA(p1) {
@@ -86,17 +86,17 @@ function getGPA(p1) {
 }
 
 function  renderSilabus (sylabusId) {
-    return '<div data-qtip="სილაბუსი" style="text-align:center" onclick="OpenSyllabusPanel(' + sylabusId + ')"><img src="' + getPath('imgs/leaf.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
+    return '<div data-qtip=\"სილაბუსი\" style=\"text-align:center\" onclick=\"OpenSyllabusPanel(' + sylabusId + ')\"><img src=\"' + getPath('imgs/leaf.png') + '\"style=\"height:16px;width:16px;cursor:pointer\"/></div>';
 
 }
 
 
 function renderDetailButton(active, edCourseGras, EduCourseName) {
     if (active == true && edCourseGras != 0) {
-        return '<div data-qtip="დეტალური ცხრილი" style="text-align:center" onclick="OpenGradesPanel(' + edCourseGras + ',\"' + EduCourseName + '\"' + ')" ><img  src="' + getPath('imgs/view_Details.png') + '"style="height:16px;width:16px;cursor:pointer"/></div>';
+        return '<div data-qtip=\"დეტალური ცხრილი\" style=\"text-align:center\" onclick=\\'OpenGradesPanel(' + edCourseGras + ',\"' + EduCourseName + '\"' + ')\\' ><img  src=\"' + getPath('imgs/view_Details.png') + '\"style=\"height:16px;width:16px;cursor:pointer\"/></div>';
     }
     else {
-        return "";
+        return \"\";
     }
 }
 
@@ -108,11 +108,138 @@ function getAvGpa() {
             var resultObj = Ext.decode(result.responseText);
             if (resultObj.success) {
                 var data = resultObj.data;
-                $("#gpa").append(data.Info);
+                $(\"#gpa\").append(data.Info);
             }
         }
     });
 }
+function addRow(numberOfRows) {
+    if (!numberOfRows) numberOfRows = 1;
+    
+    for (var i = 0; i < numberOfRows; i++) {
+      $('#grades_table tbody').append(
+        $('<tr />').attr('class', 'grade_row').append(
+          $('<td />')
+            .css({
+              'font-weight': 'bold',
+              'text-align': 'center'
+            })
+            .text($('.grade_row').length + 1)
+        )
+        .append(
+          $('<td />').append(
+            $('<input />')
+              .attr({
+                'type': 'text',
+                'class': 'class_field',
+                'name': 'class',
+                'placeholder':'შევსება არ არის სავალდებულო',
+                'style':'min-width: 210px;'
+              })
+          )
+        )
+        .append(
+          $('<td />').append(
+            $('<select/>')
+              .attr({
+                'class': 'grade_field',
+                'name': 'grade',
+              })
+              .append($('<option/>') .attr({
+                'value': '4.0'
+              }).text('A'))
+              .append($('<option/>') .attr({
+                'value': '3.0'
+              }).text('B'))
+              .append($('<option/>') .attr({
+                'value': '2.0'
+              }).text('C'))
+              .append($('<option/>') .attr({
+                'value': '1.0'
+              }).text('D'))
+              .append($('<option/>') .attr({
+                'value': '0.5'
+              }).text('E'))
+              .attr('style','width: initial;')
+          )
+        )
+        .append(
+          $('<td />').append(
+            $('<input />')
+              .attr({
+                'type': 'text',
+                'class': 'credits_field',
+                'name': 'credits',
+                'size': '3'
+              })
+          )
+        )
+      );
+    }
+  }
+  
+  
+  function makeForm()
+  {
+    var form = $('<form/>').attr('id','gpa_form')
+      .append( $('<table/>')
+      .addClass('table table-bordered')
+        .attr('id','grades_table')
+        .attr('style','width: initial;margin-bottom: 10px;')
+      .append($('<thead/>')
+        .append($('<tr/>')
+          .append($('<th/>').text('#'))
+          .append($('<th/>').text('დისციპლინა'))
+          .append($('<th/>').text('შეფასება'))
+          .append($('<th/>').text('კრედიტი'))
+          ))
+      .append($('<tbody/>')))
+      .append($('<div/>').attr('id','gpa_output').attr('style','margin: 10px 0px;font-size: 16px;'))
+      .append($('<a/>').attr('href','javascript:void(0);').addClass('btn btn-default').attr('id','add_row').text('დისციპლინის დამატება').attr('style','margin-right: 10px; line-height: 24px; background-color: #abce74;'))
+      .append($('<input/>').attr('type','submit').val('გამოთვლა').addClass('btn btn-success'));
+ 
+    return form;
+  }
+  
+
+  function makeGPACalculator() {
+    $('#studentProfile').append($('<div/>').text('?')
+        .attr('data-qtip','GPA კალკულატორი <br/><br/> მოცემული ფორმა დაგეხმარებათ მარტივად გამოთვალოთ GPA-ის რაოდენობა შეფასებასა და კრედიტების რაოდენობაზე დაყრდნობით <br/><br/> დაამატეთ სასურველი რაოდენობის დისციპლინა „დისციპლინის დამატება“ ღილაკის გამოყენებით, აირჩიეთ შეფასება და შეიტანეთ კრედიტების რაოდენობა (ყურადღება: გამოთვლაში მონაწილეობას არ მიიღებს დისციპლინა რომლის კრედიტის ველი იქნება ცარიელი. დისციპლინა ველის შევსება არ არის სავალდებულო) და დააჭირეთ ღილაკს „გამოთვლა“')
+        .attr('style','cursor: pointer; width: 30px; height: 30px; margin: 10px 0px; text-align: center; line-height: 30px; border: 1px solid; font-size: 20px; border-radius: 50%;'));
+    $('#studentProfile').append(makeForm());
+  
+    addRow(1);
+  
+    $('#add_row').click(function() {
+      addRow();
+    });
+    
+    $('#gpa_form').submit(function(e) {
+      e.preventDefault();
+      
+      var gradePoints = 0.0;
+      var totalCredits = 0.0;
+      
+      $('.grade_row').each(function(i) {
+        if ($(this).find('.grade_field').val() == '' || $(this).find('.credits_field').val() == '') {
+          return;
+        }
+        
+        gradePoints += parseFloat($(this).find('.grade_field').val()) * parseFloat($(this).find('.credits_field').val());
+        totalCredits += parseFloat($(this).find('.credits_field').val());
+      });
+      
+      var gpa = gradePoints / totalCredits;
+      
+      if (gradePoints == 0.0 || totalCredits == 0.0) {
+        $('#gpa_output').text('შეიტანეთ მინიმუმ ერთი საგნის კრედიტების რაოდენობა');
+      } else if (isNaN(gpa)) {
+        $('#gpa_output').text('დაფიქსირდა შეცდომა');
+      } else {
+        $('#gpa_output').html('<span style=\"font-weight: bold;\">GPA:</span>' + gpa);
+      }
+    });
+  };
 
 getData();
 
