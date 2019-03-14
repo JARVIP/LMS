@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+      <style>
+        .lecture
+        {
+            padding: 5px;
+            background-color: #c8e8df;
+            border-bottom: 3px solid #a2c7bb;
+        }
+        .practice
+        {
+            padding: 5px;
+            background-color: #d4eabb;
+            border-bottom: 3px solid #becab1;
+        }
+        .work-group
+        {
+            padding: 5px;
+            background-color: #fff4cc;
+            border-bottom: 3px solid #d8cfae;
+        }
+        .laboratory
+        {
+            padding: 5px;
+            background-color: #b5c7e8;
+            border-bottom: 3px solid #86a2af;
+        }
+        .same-time
+        {
+            padding: 5px;
+            background-color: #ff6666;
+            border-bottom: 3px solid #ff3939;
+            color:#fff;
+        }
+        .table-bordered>tbody>tr>td
+        {
+            padding: 0px;
+        }
+        .break-time
+        {
+            padding: 10px 5px;
+    border-bottom: 3px solid #a0a22e;
+    background-color: #fbff07;
+        }
+        .v-align
+        {   
+            vertical-align:middle !important;
+        }
+    </style>
+</head>
+<body id="body">
+        
+</body>
+
+
+<script>
+    $(document).ready(function(){
+      //  var times = ["09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00"];
+   //var weekDayes = ["ორშაბათი","სამშაბათი","ოთხშაბათი","ხუთშაბათი","პარასკევი","შაბათი",];
+        var jsonData= '{"success":true,"data":[{"CourseName":"ბუღალტრული აღრიცხვის საფუძვლები","SyllabusID":12392,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"13:00","EndHour":"14:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"ზეინაბი გოგრიჭიანი","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 5 სართული 501","StartDate":"03.18.2019","Lector":"მალხაზ ფარცვანია","EndDate":"07.01.2019"}]}]},{"CourseName":"მარკეტინგი 1","SyllabusID":436205,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"16:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"მარინა კობალავა","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"13:00","EndHour":"15:00","Room":"X კორპუსი 11 სართული 1106","StartDate":"03.18.2019","Lector":"მარინა კობალავა","EndDate":"07.01.2019"}]}]},{"CourseName":"კორპორაციათა ფინანსები","SyllabusID":12403,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"14:00","EndHour":"15:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"თამარ კბილაძე","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"17:00","Room":"X კორპუსი 11 სართული 1105","StartDate":"03.18.2019","Lector":"თეა კასრაძე ","EndDate":"07.01.2019"}]}]},{"CourseName":"ბიზნესის ადმინისტრირების საფუძვლები 2","SyllabusID":436319,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"12:00","Room":"X კორპუსი 2 სართული 205","StartDate":"03.18.2019","Lector":"თემური შენგელია","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"17:00","Room":"X კორპუსი 2 სართული 204","StartDate":"03.18.2019","Lector":"თემური შენგელია","EndDate":"07.01.2019"}]}]},{"CourseName":"საინფორმაციო სისტემები და ტექნოლოგიები ბიზნესში","SyllabusID":436422,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"16:00","EndHour":"17:00","Room":"X კორპუსი 6 სართული 612","StartDate":"03.18.2019","Lector":"მურთაზი მაღრაძე","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"17:00","EndHour":"18:00","Room":"X კორპუსი 10 სართული 1004 კომპ.","StartDate":"03.18.2019","Lector":"მურთაზი მაღრაძე","EndDate":"07.01.2019"},{"EduGroupID":0,"Day":"პარასკევი","Hour":"18:00","EndHour":"19:00","Room":"X კორპუსი 6 სართული 612","StartDate":"03.18.2019","Lector":"დარეჯან ყირიმლიშვილი","EndDate":"07.01.2019"}]}]},{"CourseName":"უცხო ენა 4 (ინგლისური - Upper Intermediate B2.2)","SyllabusID":436436,"GroupDscr":[{"StudyActivityName":"პრაქტიკული","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"},{"EduGroupID":0,"Day":"ოთხშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"},{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"}]}]}]}';
+        
+        var object = jQuery.parseJSON(jsonData);
+        
+        drawTable(object)
+        
+    function drawTable(jsonData)
+    {
+    var weekDayes = ['ორშაბათი','სამშაბათი','ოთხშაბათი','ხუთშაბათი','პარასკევი','შაბათი',];
+    var object = jsonData;
+    object = object.data;
+    console.log(jsonData);
+    var objects = [];
+    $(object).each(function(){
+        var current = $(this)[0];
+        var obj = {
+            CourseName: current.CourseName,
+            SyllabusID: current.SyllabusID
+        };
+        var valid = false;
+        $(current.GroupDscr).each(function(){
+            var groupDscr = $(this).eq(0)[0];
+            $(groupDscr.StudyActivityDscr).each(function(){
+                var obj_clone = jQuery.extend(true, {}, obj);
+                obj_clone.StudyActivityName = groupDscr.StudyActivityName;
+                var stdActivity = $(this)[0];
+                obj_clone.Day=stdActivity.Day;
+                obj_clone.Hour=stdActivity.Hour;
+                obj_clone.EndHour=stdActivity.EndHour;
+                obj_clone.Room= stdActivity.Room;
+                obj_clone.Lector= stdActivity.Lector;
+                objects.push(obj_clone);
+                console.log(objects);
+            });
+        });
+    });
+
+    var body = $('<tbody/>');
+    var table = makeTable();
+
+    var tr = $('<tr/>');
+    for(j=0; j < $(weekDayes).length; j++){
+        $day = $(weekDayes)[j];
+        var td = $('<td/>');
+        var currentObjct = [];
+        var appear = false;
+        $(objects).each(function(){
+            var current = $(this)[0];
+            if(current.Day == $day)
+            {
+                currentObjct.push(current);
+                
+                appear = true;
+            }
+        });
+        if(appear)
+        {
+            currentObjct.sort(SortByName);
+            var EndHour = '';
+            for(i = 0; i < currentObjct.length; i++)
+            {
+                var sameTime = false;
+                for(k = i + 1; k < currentObjct.length; k++)
+                {
+                    if(currentObjct[i].EndHour > currentObjct[k].Hour )
+                    {
+                        sameTime = true;
+                    }
+                }
+                for(k = i-1; k >= 0; k--)
+                {
+                    if(currentObjct[i].Hour < currentObjct[k].EndHour )
+                    {
+                        sameTime = true;
+                    }
+                }
+                if(EndHour != '' && EndHour < currentObjct[i].Hour)
+                {
+                    var breakTime = Math.abs(new Date('2015-03-25T'+ EndHour) - new Date('2015-03-25T'+ currentObjct[i].Hour));
+                    breakTime = breakTime / (1000 * 3600);
+                    var breakTemplate = makeTimeBreakTemplate(EndHour, currentObjct[i].Hour,breakTime);
+                    td.append(breakTemplate);
+                }
+                EndHour = currentObjct[i].EndHour;
+                var template = makeTemplate(currentObjct[i].StudyActivityName,currentObjct[i].Hour + '-' + currentObjct[i].EndHour,currentObjct[i].CourseName,currentObjct[i].Room,currentObjct[i].Lector,sameTime,currentObjct[i].SyllabusID);
+                td.append(template);
+            }
+            tr.append(td);
+            body.append(tr);
+        }else
+        {
+            var cl = weekName($day);
+            table.find(cl).remove();
+        }
+    
+    };
+    table.append(body);
+    $('#body').append(table);
+}
+    
+}); 
+
+function SortByName(a, b){
+    var aName = a.Hour;
+    var bName = b.Hour; 
+    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+}
+
+
+function makeTable()
+{
+    var table = $('<table/>').addClass('table table-bordered');
+    var thea = $('<thead/>');
+    var tr = $('<tr/>').addClass('active');
+    var mon = $('<td/>').addClass('mon').attr('width','16.6%').text('ორშაბათი');
+    var tue = $('<td/>').addClass('tue').attr('width','16.6%').text('სამშაბათი');
+    var wed = $('<td/>').addClass('wed').attr('width','16.6%').text('ოთხშაბათი');
+    var thu = $('<td/>').addClass('thu').attr('width','16.6%').text('ხუთშაბათი');
+    var fri = $('<td/>').addClass('fri').attr('width','16.6%').text('პარასკევი');
+    var sat = $('<td/>').addClass('sat').attr('width','16.6%').text('შაბათი');
+    tr.append(mon);
+    tr.append(tue);
+    tr.append(wed);
+    tr.append(thu);
+    tr.append(fri);
+    tr.append(sat);
+    thea.append(tr);
+    table.append(thea);
+    return table;
+}
+
+function weekName(p1)
+{
+    var cl = '';
+    switch(p1) {
+        case 'ორშაბათი':
+            cl = '.mon';
+            break;
+        case 'სამშაბათი':
+            cl = '.tue';
+            break;
+        case 'ოთხშაბათი':
+            cl = '.wed';
+            break;
+        case 'ხუთშაბათი':
+            cl = '.thu';    
+            break;
+        case 'პარასკევი':
+            cl = '.fri';    
+            break;
+        case 'შაბათი':
+            cl = '.sat';    
+            break;
+        default:
+    }
+    return cl;
+}
+
+function makeTimeBreakTemplate(p1,p2,p3)
+{
+    var div = $('<div/>').addClass('break-time');
+    var nameSP1 = $('<span/>').text(p1+ ' - ' + p2);
+    var nameSP = $('<span/>').text('შესვენება ' + p3 + ' საათი');
+    var br = $('<br/>');
+    
+    div.append(nameSP);
+    div.append(br);
+    div.append(nameSP1);
+    return div;
+}
+
+function makeTemplate(p1,p2,p3,p4,p5,p6,p7)
+{
+    var cl = '';
+    switch(p1) {
+        case 'ლექცია ':
+            cl = 'lecture';
+            break;
+        case 'პრაქტიკული':
+            cl = 'practice';
+            break;
+        case 'ლაბორატორიული':
+            cl = 'laboratory';
+            break;
+        case 'სამუშაო ჯგუფი':
+            cl = 'work-group';    
+            break;
+        default:
+        }
+        if(p6)
+        {
+            cl = 'same-time';
+        }
+        var div = $('<div/>').addClass(cl);
+        var nameSP = $('<span/>').text(p1+ ' - ');
+        var timeSP = $('<span/>').text(p2);
+        var headLine = $('<h5/>').text(p3);
+        var small = $('<small/>').text(p4);
+        var br = $('<br/>');
+        var lector = $('<small/>').text(p5);
+        var silabus = $('<img/>').attr('src','http://lms.tsu.ge/imgs/leaf.png').attr('style','width:16px;float:right;cursor:pointer').attr('onclick','OpenSyllabusPanel('+ p7 +')');
+        div.append(nameSP);
+        div.append(timeSP);
+        div.append(headLine);
+        div.append(small);
+        div.append(br);
+        div.append(lector);
+        div.append(silabus);
+        return div;
+}
+
+function getObjects(obj, key, val) {
+    var retv = [];
+
+    if(jQuery.isPlainObject(obj))
+    {
+        if(obj[key] === val)
+            retv.push(obj);
+
+        var objects = jQuery.grep(obj, function(elem) {
+            return (jQuery.isArray(elem) || jQuery.isPlainObject(elem));
+        });
+
+        retv.concat(jQuery.map(objects, function(elem){
+            return getObjects(elem, key, val);
+        }));
+    }
+    return retv;
+    
+}
+
+function OpenSyllabusPanel(SyllabusID) {
+    window.open(getPath('Home/Syllabus?id=' + SyllabusID));
+}
+
+
+</script>
+</html>
+
+
+
+
+

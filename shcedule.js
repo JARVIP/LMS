@@ -50,10 +50,10 @@ $(document).ready(function(){
         };
         var valid = false;
         $(current.GroupDscr).each(function(){
-            var obj_clone = jQuery.extend(true, {}, obj);
             var groupDscr = $(this).eq(0)[0];
-            obj_clone.StudyActivityName = groupDscr.StudyActivityName;
             $(groupDscr.StudyActivityDscr).each(function(){
+                var obj_clone = jQuery.extend(true, {}, obj);
+                obj_clone.StudyActivityName = groupDscr.StudyActivityName;
                 var stdActivity = $(this)[0];
                 obj_clone.Day=stdActivity.Day;
                 obj_clone.Hour=stdActivity.Hour;
