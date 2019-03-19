@@ -35,9 +35,7 @@ $(document).ready(function(){
 
     function drawTable(jsonData)
     {
-        
-    
-    var weekDayes = ['ორშაბათი','სამშაბათი','ოთხშაბათი','ხუთშაბათი','პარასკევი','შაბათი',];
+    var weekDayes = ['ორშაბათი','სამშაბათი','ოთხშაბათი','ხუთშაბათი','პარასკევი','შაბათი','კვირა'];
     var object = jsonData;
     object = object.data;
     console.log(jsonData);
@@ -64,7 +62,6 @@ $(document).ready(function(){
             });
         });
     });
-
     var body = $('<tbody/>');
     var table = makeTable();
 
@@ -142,18 +139,20 @@ function makeTable()
     var table = $('<table/>').addClass('table table-bordered');
     var thea = $('<thead/>');
     var tr = $('<tr/>').addClass('active');
-    var mon = $('<td/>').addClass('mon').attr('width','16.6%').text('ორშაბათი');
-    var tue = $('<td/>').addClass('tue').attr('width','16.6%').text('სამშაბათი');
-    var wed = $('<td/>').addClass('wed').attr('width','16.6%').text('ოთხშაბათი');
-    var thu = $('<td/>').addClass('thu').attr('width','16.6%').text('ხუთშაბათი');
-    var fri = $('<td/>').addClass('fri').attr('width','16.6%').text('პარასკევი');
-    var sat = $('<td/>').addClass('sat').attr('width','16.6%').text('შაბათი');
+    var mon = $('<td/>').addClass('mon').attr('width','14.28%').text('ორშაბათი');
+    var tue = $('<td/>').addClass('tue').attr('width','14.28%').text('სამშაბათი');
+    var wed = $('<td/>').addClass('wed').attr('width','14.28%').text('ოთხშაბათი');
+    var thu = $('<td/>').addClass('thu').attr('width','14.28%').text('ხუთშაბათი');
+    var fri = $('<td/>').addClass('fri').attr('width','14.28%').text('პარასკევი');
+    var sat = $('<td/>').addClass('sat').attr('width','14.28%').text('შაბათი');
+    var sun = $('<td/>').addClass('sun').attr('width','14.28%').text('კვირა');
     tr.append(mon);
     tr.append(tue);
     tr.append(wed);
     tr.append(thu);
     tr.append(fri);
     tr.append(sat);
+    tr.append(sun);
     thea.append(tr);
     table.append(thea);
     return table;
@@ -180,6 +179,9 @@ function weekName(p1)
             break;
         case 'შაბათი':
             cl = '.sat';    
+            break;
+        case 'კვირა':
+            cl = '.sun';    
             break;
         default:
     }

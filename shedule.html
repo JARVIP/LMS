@@ -67,15 +67,15 @@
     $(document).ready(function(){
       //  var times = ["09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00"];
    //var weekDayes = ["ორშაბათი","სამშაბათი","ოთხშაბათი","ხუთშაბათი","პარასკევი","შაბათი",];
-        var jsonData= '{"success":true,"data":[{"CourseName":"ბუღალტრული აღრიცხვის საფუძვლები","SyllabusID":12392,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"13:00","EndHour":"14:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"ზეინაბი გოგრიჭიანი","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 5 სართული 501","StartDate":"03.18.2019","Lector":"მალხაზ ფარცვანია","EndDate":"07.01.2019"}]}]},{"CourseName":"მარკეტინგი 1","SyllabusID":436205,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"16:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"მარინა კობალავა","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"13:00","EndHour":"15:00","Room":"X კორპუსი 11 სართული 1106","StartDate":"03.18.2019","Lector":"მარინა კობალავა","EndDate":"07.01.2019"}]}]},{"CourseName":"კორპორაციათა ფინანსები","SyllabusID":12403,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"14:00","EndHour":"15:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"თამარ კბილაძე","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"17:00","Room":"X კორპუსი 11 სართული 1105","StartDate":"03.18.2019","Lector":"თეა კასრაძე ","EndDate":"07.01.2019"}]}]},{"CourseName":"ბიზნესის ადმინისტრირების საფუძვლები 2","SyllabusID":436319,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"12:00","Room":"X კორპუსი 2 სართული 205","StartDate":"03.18.2019","Lector":"თემური შენგელია","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"17:00","Room":"X კორპუსი 2 სართული 204","StartDate":"03.18.2019","Lector":"თემური შენგელია","EndDate":"07.01.2019"}]}]},{"CourseName":"საინფორმაციო სისტემები და ტექნოლოგიები ბიზნესში","SyllabusID":436422,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"16:00","EndHour":"17:00","Room":"X კორპუსი 6 სართული 612","StartDate":"03.18.2019","Lector":"მურთაზი მაღრაძე","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"17:00","EndHour":"18:00","Room":"X კორპუსი 10 სართული 1004 კომპ.","StartDate":"03.18.2019","Lector":"მურთაზი მაღრაძე","EndDate":"07.01.2019"},{"EduGroupID":0,"Day":"პარასკევი","Hour":"18:00","EndHour":"19:00","Room":"X კორპუსი 6 სართული 612","StartDate":"03.18.2019","Lector":"დარეჯან ყირიმლიშვილი","EndDate":"07.01.2019"}]}]},{"CourseName":"უცხო ენა 4 (ინგლისური - Upper Intermediate B2.2)","SyllabusID":436436,"GroupDscr":[{"StudyActivityName":"პრაქტიკული","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"},{"EduGroupID":0,"Day":"ოთხშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"},{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"}]}]}]}';
+        var jsonData= '{"success":true,"data":[{"CourseName":"ბუღალტრული აღრიცხვის საფუძვლები","SyllabusID":12392,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"კვირა","Hour":"13:00","EndHour":"14:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"ზეინაბი გოგრიჭიანი","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"კვირა","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 5 სართული 501","StartDate":"03.18.2019","Lector":"მალხაზ ფარცვანია","EndDate":"07.01.2019"}]}]},{"CourseName":"მარკეტინგი 1","SyllabusID":436205,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"კვირა","Hour":"15:00","EndHour":"16:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"მარინა კობალავა","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"13:00","EndHour":"15:00","Room":"X კორპუსი 11 სართული 1106","StartDate":"03.18.2019","Lector":"მარინა კობალავა","EndDate":"07.01.2019"}]}]},{"CourseName":"კორპორაციათა ფინანსები","SyllabusID":12403,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"14:00","EndHour":"15:00","Room":"X კორპუსი 2 სართული 207","StartDate":"03.18.2019","Lector":"თამარ კბილაძე","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"17:00","Room":"X კორპუსი 11 სართული 1105","StartDate":"03.18.2019","Lector":"თეა კასრაძე ","EndDate":"07.01.2019"}]}]},{"CourseName":"ბიზნესის ადმინისტრირების საფუძვლები 2","SyllabusID":436319,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"12:00","Room":"X კორპუსი 2 სართული 205","StartDate":"03.18.2019","Lector":"თემური შენგელია","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"სამშაბათი","Hour":"15:00","EndHour":"17:00","Room":"X კორპუსი 2 სართული 204","StartDate":"03.18.2019","Lector":"თემური შენგელია","EndDate":"07.01.2019"}]}]},{"CourseName":"საინფორმაციო სისტემები და ტექნოლოგიები ბიზნესში","SyllabusID":436422,"GroupDscr":[{"StudyActivityName":"ლექცია ","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"16:00","EndHour":"17:00","Room":"X კორპუსი 6 სართული 612","StartDate":"03.18.2019","Lector":"მურთაზი მაღრაძე","EndDate":"07.01.2019"}]},{"StudyActivityName":"სამუშაო ჯგუფი","StudyActivityDscr":[{"EduGroupID":0,"Day":"პარასკევი","Hour":"17:00","EndHour":"18:00","Room":"X კორპუსი 10 სართული 1004 კომპ.","StartDate":"03.18.2019","Lector":"მურთაზი მაღრაძე","EndDate":"07.01.2019"},{"EduGroupID":0,"Day":"პარასკევი","Hour":"18:00","EndHour":"19:00","Room":"X კორპუსი 6 სართული 612","StartDate":"03.18.2019","Lector":"დარეჯან ყირიმლიშვილი","EndDate":"07.01.2019"}]}]},{"CourseName":"უცხო ენა 4 (ინგლისური - Upper Intermediate B2.2)","SyllabusID":436436,"GroupDscr":[{"StudyActivityName":"პრაქტიკული","StudyActivityDscr":[{"EduGroupID":0,"Day":"ორშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"},{"EduGroupID":0,"Day":"ოთხშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"},{"EduGroupID":0,"Day":"ხუთშაბათი","Hour":"11:00","EndHour":"13:00","Room":"X კორპუსი 7 სართული 702","StartDate":"03.11.2019","Lector":"ლია მეგრელიშვილი","EndDate":"06.24.2019"}]}]}]}';
         
         var object = jQuery.parseJSON(jsonData);
         
         drawTable(object)
         
-    function drawTable(jsonData)
+        function drawTable(jsonData)
     {
-    var weekDayes = ['ორშაბათი','სამშაბათი','ოთხშაბათი','ხუთშაბათი','პარასკევი','შაბათი',];
+    var weekDayes = ['ორშაბათი','სამშაბათი','ოთხშაბათი','ხუთშაბათი','პარასკევი','შაბათი','კვირა'];
     var object = jsonData;
     object = object.data;
     console.log(jsonData);
@@ -99,11 +99,9 @@
                 obj_clone.Room= stdActivity.Room;
                 obj_clone.Lector= stdActivity.Lector;
                 objects.push(obj_clone);
-                console.log(objects);
             });
         });
     });
-
     var body = $('<tbody/>');
     var table = makeTable();
 
@@ -164,7 +162,7 @@
     
     };
     table.append(body);
-    $('#body').append(table);
+    $('#body').html(table);
 }
     
 }); 
@@ -181,18 +179,20 @@ function makeTable()
     var table = $('<table/>').addClass('table table-bordered');
     var thea = $('<thead/>');
     var tr = $('<tr/>').addClass('active');
-    var mon = $('<td/>').addClass('mon').attr('width','16.6%').text('ორშაბათი');
-    var tue = $('<td/>').addClass('tue').attr('width','16.6%').text('სამშაბათი');
-    var wed = $('<td/>').addClass('wed').attr('width','16.6%').text('ოთხშაბათი');
-    var thu = $('<td/>').addClass('thu').attr('width','16.6%').text('ხუთშაბათი');
-    var fri = $('<td/>').addClass('fri').attr('width','16.6%').text('პარასკევი');
-    var sat = $('<td/>').addClass('sat').attr('width','16.6%').text('შაბათი');
+    var mon = $('<td/>').addClass('mon').attr('width','14.28%').text('ორშაბათი');
+    var tue = $('<td/>').addClass('tue').attr('width','14.28%').text('სამშაბათი');
+    var wed = $('<td/>').addClass('wed').attr('width','14.28%').text('ოთხშაბათი');
+    var thu = $('<td/>').addClass('thu').attr('width','14.28%').text('ხუთშაბათი');
+    var fri = $('<td/>').addClass('fri').attr('width','14.28%').text('პარასკევი');
+    var sat = $('<td/>').addClass('sat').attr('width','14.28%').text('შაბათი');
+    var sun = $('<td/>').addClass('sun').attr('width','14.28%').text('კვირა');
     tr.append(mon);
     tr.append(tue);
     tr.append(wed);
     tr.append(thu);
     tr.append(fri);
     tr.append(sat);
+    tr.append(sun);
     thea.append(tr);
     table.append(thea);
     return table;
@@ -219,6 +219,9 @@ function weekName(p1)
             break;
         case 'შაბათი':
             cl = '.sat';    
+            break;
+        case 'კვირა':
+            cl = '.sun';    
             break;
         default:
     }
@@ -301,6 +304,8 @@ function getObjects(obj, key, val) {
 function OpenSyllabusPanel(SyllabusID) {
     window.open(getPath('Home/Syllabus?id=' + SyllabusID));
 }
+
+
 
 
 </script>
